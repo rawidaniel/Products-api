@@ -33,6 +33,7 @@ use ApiPlatform\Metadata\GetCollection;
     ]
 )]
 #[ApiResource(
+    security: "is_granted('ROLE_USER')",
     paginationItemsPerPage: 2,
     normalizationContext: ['groups' => ['product.read']],
     denormalizationContext: ['groups' => ['product.write']]
